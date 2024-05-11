@@ -28,7 +28,6 @@ impl Graph for UndirectedGraph {
         &self.adjacency_table
     }
     fn add_edge(&mut self, edge: (&str, &str, i32)) {
-        //TODO
         self.adjacency_table.entry(edge.0.to_string())
             .and_modify(|v| v.push((edge.1.to_string(), edge.2)))
             .or_insert(vec![(edge.1.to_string(), edge.2)]);
